@@ -1,5 +1,5 @@
 class CardController < ApplicationController
-  before_action :set_card, only: %i(show edit update)
+  before_action :set_card, only: %i(show edit update destroy)
 
   def new
     @card = Card.new
@@ -26,6 +26,10 @@ class CardController < ApplicationController
     else
       render action: :edit
     end
+  end
+  def destroy
+    @card.destroy
+    redirect_to :root
   end
 
   private
