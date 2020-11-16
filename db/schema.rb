@@ -13,7 +13,7 @@
 ActiveRecord::Schema.define(version: 2020_11_15_210105) do
 
   create_table "cards", force: :cascade do |t|
-    t.string "title", limit: 225, null: false
+    t.string "title", limit: 255, null: false
     t.text "memo", limit: 1000
     t.integer "list_id", null: false
     t.datetime "created_at", precision: 6, null: false
