@@ -2,21 +2,21 @@
   <div class='container'>
     <%= form_with model: @card, url: { action: :update }, html: { class: 'cardeditForm' }, local: true do |f| %>
       <% if @card.errors.any? %>
-        <p class="text-danger">タイトルは1～255文字以内で入力してください</p>
+        <p class="text-danger">なまえは1～255までかいてね</p>
       <% end %>
       <div class="cardeditForm_title">
         <%= f.label :title %>
-        <%= f.text_field :title, class: "form-control", placeholder: "カード名" %>
+        <%= f.text_field :title, class: "form-control", placeholder: "やること" %>
       </div>
       <div class="cardeditForm_memo">
         <%= f.label :memo %>
-        <%= f.text_area :memo, class: "form-control", placeholder: "詳細" %>
+        <%= f.text_area :memo, class: "form-control", placeholder: "くわしく" %>
       </div>
       <div class="cardeditForm_memo">
         <label>リスト名</label>
         <%= select :card, :list_id, @lists.map{ |l| [l.title, l.id] }, {}, { class: 'form-control' } %>
       </div>
-      <div class="text-center"><%= f.submit "更新する", class: "submitBtn" %></div>
+      <div class="text-center"><%= f.submit "かえちゃうよ", class: "submitBtn" %></div>
     <% end %>
   </div>
 </div>
